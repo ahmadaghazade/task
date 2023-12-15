@@ -60,7 +60,7 @@ class PaymentService {
         ]);
     }
 
-    public function verify($card_number, $tracking_code , $ref_num)
+    public function verify($card_number, $tracking_code , $ref_num) : bool
     {
         $data = Payment::where('ref_num', $ref_num)->first();
         $amount = $data->fee_free_amount;
